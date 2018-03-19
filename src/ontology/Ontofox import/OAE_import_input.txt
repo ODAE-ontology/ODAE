@@ -461,6 +461,9 @@ http://purl.obolibrary.org/obo/OAE_0004377
 http://purl.obolibrary.org/obo/OAE_0000001
 http://purl.obolibrary.org/obo/OAE_0000011 #drug administration
 
+http://purl.obolibrary.org/obo/OAE_0000005 #drug AE
+includeAllChildren
+
 http://purl.obolibrary.org/obo/BFO_0000062 #preceded by
 http://purl.obolibrary.org/obo/BFO_0000057 #has participant 
 http://purl.obolibrary.org/obo/BFO_0000040 #material entity
