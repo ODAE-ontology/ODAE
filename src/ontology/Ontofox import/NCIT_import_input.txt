@@ -1,0 +1,39 @@
+[URI of the OWL(RDF/XML) output file]
+http://purl.obolibrary.org/obo/odae/NCIT_import.owl
+
+[Source ontology]
+NCIT
+
+[Low level source term URIs]
+http://purl.obolibrary.org/obo/NCIT_C16423 #child
+http://purl.obolibrary.org/obo/NCIT_C27954 #Adolescent
+http://purl.obolibrary.org/obo/NCIT_C16268 #Elderly
+http://purl.obolibrary.org/obo/NCIT_C17600 #adult
+http://purl.obolibrary.org/obo/NCIT_C16731 #newborn, neonate
+
+[Top level source term URIs and target direct superclass URIs]
+
+http://purl.obolibrary.org/obo/NCIT_C16423 #child
+subClassOf http://purl.obolibrary.org/obo/NCBITaxon_9606 #Homo sapiens 
+
+http://purl.obolibrary.org/obo/NCIT_C27954 #Adolescent
+subClassOf http://purl.obolibrary.org/obo/NCBITaxon_9606 #Homo sapiens 
+
+http://purl.obolibrary.org/obo/NCIT_C16268 #Elderly
+subClassOf http://purl.obolibrary.org/obo/NCBITaxon_9606 #Homo sapiens 
+
+http://purl.obolibrary.org/obo/NCIT_C17600 #adult
+subClassOf http://purl.obolibrary.org/obo/NCBITaxon_9606 #Homo sapiens 
+
+http://purl.obolibrary.org/obo/NCIT_C16731 #newborn, neonate
+subClassOf http://purl.obolibrary.org/obo/NCBITaxon_9606 #Homo sapiens 
+
+[Source term retrieval setting]
+includeNoIntermediates
+
+[Branch extractions from source term URIs and target direct superclass URIs]
+
+
+[Source annotation URIs]
+includeAllAnnotationProperties
+

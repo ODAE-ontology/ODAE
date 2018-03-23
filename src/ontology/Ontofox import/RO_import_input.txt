@@ -8,6 +8,7 @@ RO
 http://purl.obolibrary.org/obo/RO_0000087 #has role
 # http://purl.obolibrary.org/obo/RO_0000053 #bearer of 
 http://purl.obolibrary.org/obo/BFO_0000066 #occurs in
+http://purl.obolibrary.org/obo/RO_0000057 #has participant
 
 [Top level source term URIs and target direct superclass URIs]
 http://www.w3.org/2002/07/owl#topObjectProperty
