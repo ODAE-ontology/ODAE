@@ -82,6 +82,80 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000005 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000005">
+        <rdfs:label xml:lang="en">drug associated with AE in adult</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000006 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000006">
+        <rdfs:label xml:lang="en">drug associated with AE in senior</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000007 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000007">
+        <rdfs:label xml:lang="en">drug associated with AE in pediatric</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000008 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000008">
+        <rdfs:label xml:lang="en">drug associated with AE in newborn</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000009 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000009">
+        <rdfs:label xml:lang="en">drug associated with AE in adolescent</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000010 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000010">
+        <rdfs:label xml:lang="en">used to treat disease</rdfs:label>
+        <obo:IAO_0000115>An object property that represents a relation between a material entity (e.g., drug) and a disease that is treated by the material entity.</obo:IAO_0000115>
+        <obo:IAO_0000117>OH, SN</obo:IAO_0000117>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000011 -->
+
+    <owl:DatatypeProperty rdf:about="&obo;ODAE_0000011">
+        <rdfs:label xml:lang="en">has age in year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -121,7 +195,7 @@
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;OAE_0000602"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RO_0000057"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000066"/>
                                 <owl:someValuesFrom>
                                     <owl:Class>
                                         <owl:intersectionOf rdf:parseType="Collection">
@@ -139,6 +213,57 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000005"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OAE_0000602"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000010"/>
+                        <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCIT_C17600 -->
+
+    <rdf:Description rdf:about="&obo;NCIT_C17600">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;ODAE_0000011"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="&xsd;decimal">21</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;ODAE_0000011"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="&xsd;decimal">21</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </rdf:Description>
     
 
@@ -148,7 +273,7 @@
     <rdf:Description rdf:about="&obo;OAE_0000602">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0000057"/>
+                <owl:onProperty rdf:resource="&obo;BFO_0000066"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
