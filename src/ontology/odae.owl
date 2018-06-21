@@ -22,13 +22,16 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
     <owl:Ontology rdf:about="&obo;odae.owl">
-        <dc:date xml:lang="en">2018-03-16</dc:date>
-        <dc:subject xml:lang="en">A biomedical ontology in drug adverse events</dc:subject>
-        <dc:description xml:lang="en">ODAE is a biomedical ontology in the area of drug adverse events. It is developed by following OBO Foundry principles.</dc:description>
+        <dc:date xml:lang="en">2018-06-21</dc:date>
+        <dc:subject xml:lang="en">A biomedical ontology in the domain of drug adverse events</dc:subject>
+        <dc:creator xml:lang="en">Edison Ong</dc:creator>
+        <dc:creator xml:lang="en">Hong Yu</dc:creator>
+        <dc:creator xml:lang="en">Noemi Garg</dc:creator>
+        <dc:description xml:lang="en">ODAE is a biomedical ontology in the area of drug adverse events. It is developed by following OBO Foundry principles (e.g., openness, collaboration).</dc:description>
         <dc:title xml:lang="en">ODAE: Ontology of Drug Adverse Events</dc:title>
         <dc:format xml:lang="en">OWL-DL</dc:format>
         <dc:creator xml:lang="en">Solomiya Nysak</dc:creator>
-        <owl:versionInfo xml:lang="en">Vision Release: 1.0.01</owl:versionInfo>
+        <owl:versionInfo xml:lang="en">Vision Release: 1.0.03</owl:versionInfo>
         <dc:creator xml:lang="en">Yongqun &quot;Oliver&quot; He</dc:creator>
         <owl:imports rdf:resource="c&obo;odae/NDF-RT_import.owl"/>
         <owl:imports rdf:resource="&obo;odae/DOID_import.owl"/>
@@ -86,6 +89,8 @@
 
     <owl:ObjectProperty rdf:about="&obo;ODAE_0000005">
         <rdfs:label xml:lang="en">drug associated with AE in adult</rdfs:label>
+        <obo:IAO_0000115>An object property that represents a relation between a drug and its associated AE where the AE occurs in an adult patient.</obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
         <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
     </owl:ObjectProperty>
     
@@ -95,6 +100,8 @@
 
     <owl:ObjectProperty rdf:about="&obo;ODAE_0000006">
         <rdfs:label xml:lang="en">drug associated with AE in senior</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>An object property that represents a relation between a drug and its associated AE where the AE occurs in a senior patient.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
     </owl:ObjectProperty>
     
@@ -104,6 +111,8 @@
 
     <owl:ObjectProperty rdf:about="&obo;ODAE_0000007">
         <rdfs:label xml:lang="en">drug associated with AE in pediatric</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>An object property that represents a relation between a drug and its associated AE where the AE occurs in a pediatric patient.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
     </owl:ObjectProperty>
     
@@ -113,6 +122,8 @@
 
     <owl:ObjectProperty rdf:about="&obo;ODAE_0000008">
         <rdfs:label xml:lang="en">drug associated with AE in newborn</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>An object property that represents a relation between a drug and its associated AE where the AE occurs in a newborn patient.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
     </owl:ObjectProperty>
     
@@ -122,6 +133,8 @@
 
     <owl:ObjectProperty rdf:about="&obo;ODAE_0000009">
         <rdfs:label xml:lang="en">drug associated with AE in adolescent</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>An object property that represents a relation between a drug and its associated AE where the AE occurs in an adolescent patient.</obo:IAO_0000115>
         <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000002"/>
     </owl:ObjectProperty>
     
@@ -133,6 +146,47 @@
         <rdfs:label xml:lang="en">used to treat disease</rdfs:label>
         <obo:IAO_0000115>An object property that represents a relation between a material entity (e.g., drug) and a disease that is treated by the material entity.</obo:IAO_0000115>
         <obo:IAO_0000117>OH, SN</obo:IAO_0000117>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000012 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000012">
+        <rdfs:label xml:lang="en">occurs in adult having disease</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>A shortcut object property that represents an adverse event and a disease in an adult patient where the adult patient with the disease has an adverse event after a medical intervention.</obo:IAO_0000115>
+        <rdfs:subPropertyOf rdf:resource="&obo;ODAE_0000018"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000018 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000018">
+        <rdfs:label xml:lang="en">occurs in patient having disease</rdfs:label>
+        <obo:IAO_0000115>A shortcut object property that represents an adverse event and a disease in a patient where the patient with the disease has an adverse event after a medical intervention.</obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000019 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000019">
+        <rdfs:label xml:lang="en">occurs in patient treated with drug</rdfs:label>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
+        <obo:IAO_0000115>A shortcut object property that represents a process (e.g., adverse event) and a drug where the process occurs in a patient treated with the drug.</obo:IAO_0000115>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ODAE_0000020 -->
+
+    <owl:ObjectProperty rdf:about="&obo;ODAE_0000020">
+        <rdfs:label xml:lang="en">drug AE occurs in</rdfs:label>
+        <obo:IAO_0000115>A shortcut object property that represents a drug and human where the drug associated adverse event (AE) occurs in the human patient.</obo:IAO_0000115>
+        <obo:IAO_0000117>Oliver He</obo:IAO_0000117>
     </owl:ObjectProperty>
     
 
@@ -227,6 +281,40 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;ODAE_0000002"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;OAE_0000602"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;ODAE_0000012"/>
+                                <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000002"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OAE_0000602"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000010"/>
+                        <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000020"/>
+                        <owl:someValuesFrom rdf:resource="&obo;NCIT_C17600"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
     </rdf:Description>
     
 
@@ -294,6 +382,24 @@
                     </owl:Class>
                 </owl:someValuesFrom>
             </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000066"/>
+                        <owl:someValuesFrom rdf:resource="&obo;NCIT_C17600"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000018"/>
+                        <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000019"/>
+                        <owl:someValuesFrom rdf:resource="http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000148640"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
     </rdf:Description>
     
