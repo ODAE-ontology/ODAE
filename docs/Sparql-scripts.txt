@@ -1,0 +1,16 @@
+# This query searches ODAE for all possible drugs that may treat any types of respiratory diseases. N0000010582 is the ID of the top level drug term in NDF-RT. N0000002602 is the ID of the top level respiratory disease term.  
+
+PREFIX may_treat: <http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#may_treat>
+SELECT distinct ?drug_label ?rdisease_label
+from <http://purl.obolibrary.org/obo/merged/ODAE>
+WHERE
+{  
+   ?drug rdfs:label ?drug_label .
+   ?drug rdfs:subClassOf <http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000010582> option (transitive) .
+   
+   ?rdisease rdfs:label ?rdisease_label .
+   ?rdisease rdfs:subClassOf <http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000002602> option (transitive) . 
+   
+   ?drug rdfs:subClassOf ?drug_restriction .
+   ?drug_restriction owl:onProperty may_treat:; owl:someValuesFrom ?rdisease .
+}
