@@ -17,14 +17,45 @@ WHERE
 
 
 --
-used to treat disease
-Term IRI: http://purl.obolibrary.org/obo/ODAE_0000010
 
-occurs in adult having disease
-http://purl.obolibrary.org/obo/ODAE_0000012
-(note: somehow not yet in Ontobee)
 
-    <!-- http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000148640 -->
+PREFIX drugtop: <http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000010582>
+PREFIX drug_associated_with_AE: <http://purl.obolibrary.org/obo/ODAE_0000002>
+PREFIX occurs_in: <http://purl.obolibrary.org/obo/BFO_0000066>
+PREFIX has_disease: <http://purl.obolibrary.org/obo/ODAE_0000003>
+PREFIX adult: <http://purl.obolibrary.org/obo/NCIT_C17600>
+SELECT distinct ?drug_label ?drug STR(?ade_label) STR(?disease_label) 
+from <http://purl.obolibrary.org/obo/merged/ODAE>
+WHERE
+{     
+   ?drug rdfs:label ?drug_label .
+   ?disease rdfs:label ?disease_label .
+   ?ade rdfs:label ?ade_label .    
+   ?drug rdfs:subClassOf drugtop: option (transitive) .
+      
+   ?drug rdfs:subClassOf ?drugrestriction .
+   ?drugrestriction owl:onProperty drug_associated_with_AE:; owl:someValuesFrom ?adeClass .    
+   
+   ?adeClass owl:intersectionOf ?list1 .
+   ?list1 rdf:first ?ade .
+   ?list1 rdf:rest ?list1rest .
+   ?list1rest rdf:first ?adeRes .
+   ?adeRes owl:onProperty occurs_in:; owl:someValuesFrom ?ageClass .  
+
+   ?ageClass owl:intersectionOf ?list2 .
+   ?list2 rdf:first adult: .           
+   ?list2 rdf:rest ?list2rest .
+   ?list2rest rdf:first ?adultrestriction .
+   ?adultrestriction owl:onProperty has_disease:; owl:someValuesFrom ?disease  .  
+}
+--
+See notes:
+https://www.w3.org/TR/rdf-schema/#ch_first
+note: rdf:rest has domain of list and range of list. So we need to use rdf:first to get the first element again. 
+
+This is for:
+    <owl:Class rdf:about="&NDF-RT;N0000148640">
+        <rdfs:label>ALOSETRON</rdfs:label>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;ODAE_0000002"/>
@@ -33,14 +64,80 @@ http://purl.obolibrary.org/obo/ODAE_0000012
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;OAE_0000602"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;ODAE_0000012"/>
-                                <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000066"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&obo;NCIT_C17600"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;ODAE_0000003"/>
+                                                <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
                 </owl:someValuesFrom>
             </owl:Restriction>
+        </rdfs:subClassOf>		
+
+--
+PREFIX drugtop: <http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000010582>
+PREFIX drug_associated_with_AE_in_adult: <http://purl.obolibrary.org/obo/ODAE_0000005>
+PREFIX used_to_treat_disease: <http://purl.obolibrary.org/obo/ODAE_0000010>
+SELECT distinct ?drug_label ?drug STR(?ade_label) STR(?disease_label) 
+from <http://purl.obolibrary.org/obo/merged/ODAE>
+WHERE
+{     
+   ?drug rdfs:label ?drug_label .
+   ?disease rdfs:label ?disease_label .
+   ?ade rdfs:label ?ade_label .    
+   ?drug rdfs:subClassOf drugtop: option (transitive) .
+   ?drug rdfs:subClassOf ?intClass .
+   ?intClass owl:intersectionOf ?list .
+   ?list rdf:first ?1restriction .
+   ?1restriction owl:onProperty drug_associated_with_AE_in_adult:; owl:someValuesFrom ?ade .
+   ?list rdf:rest ?listrest .
+   ?listrest rdf:first ?2restriction .
+   ?2restriction owl:onProperty used_to_treat_disease:; owl:someValuesFrom ?disease .               
+}
+
+-- 
+Current Ontobee sparql results with the above script:
+drug_label  drug callret-2  callret-3
+"ALOSETRON"   http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000148640 constipation AE  irritable bowel syndrome
+
+--
+This script matches the axiom:
+--
+('drug associated with AE in adult' some 'constipation AE')
+and ('used to treat disease' some 'irritable bowel syndrome')
+--
+
+It also matches the OWL source:
+--
+    <!-- http://evs.nci.nih.gov/ftp1/NDF-RT/NDF-RT.owl#N0000148640 -->
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000005"/>
+                        <owl:someValuesFrom rdf:resource="&obo;OAE_0000602"/>
+                   </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;ODAE_0000010"/>
+                        <owl:someValuesFrom rdf:resource="&obo;DOID_9778"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </rdfs:subClassOf>
-		
-		
+--
+
+Notes:
+https://www.w3.org/TR/owl-ref/#intersectionOf-def 
+https://groups.google.com/forum/#!topic/topbraid-users/Ns9yzDM1d88
+https://stackoverflow.com/questions/1862263/how-can-you-remove-the-xml-schema-datattype-from-sparql-query 
+
 		
