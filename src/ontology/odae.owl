@@ -33,7 +33,7 @@
         <dc:creator xml:lang="en">Solomiya Nysak</dc:creator>
         <owl:versionInfo xml:lang="en">Vision Release: 1.0.03</owl:versionInfo>
         <dc:creator xml:lang="en">Yongqun &quot;Oliver&quot; He</dc:creator>
-        <owl:imports rdf:resource="c&obo;odae/NDF-RT_import.owl"/>
+        <owl:imports rdf:resource="&obo;odae/NDF-RT_import.owl"/>
         <owl:imports rdf:resource="&obo;odae/DOID_import.owl"/>
         <owl:imports rdf:resource="&obo;odae/DrON_import.owl"/>
         <owl:imports rdf:resource="&obo;odae/NCBITaxon_import.owl"/>
