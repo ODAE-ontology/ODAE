@@ -6,14 +6,14 @@
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/odae/RO_import.owl" uri="RO_import.owl"/>
     <uri id="Imports Wizard Entry" name="http://purl.obolibrary.org/obo/odae/BFO_import.owl" uri="BFO_import.owl"/>
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="chttp://purl.obolibrary.org/obo/odae/NDF-RT_import.owl" uri="NDF-RT_import.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="duplicate:http://purl.obolibrary.org/obo/odae.owl" uri="odae.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="duplicate:http://purl.obolibrary.org/obo/odae.owl" uri="odae_merged.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="http://purl.obolibrary.org/obo/odae/DOID_import.owl" uri="DOID_import.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="http://purl.obolibrary.org/obo/odae/DrON_import.owl" uri="DrON_import.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="http://purl.obolibrary.org/obo/odae/NCBITaxon_import.owl" uri="NCBITaxon_import.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="http://purl.obolibrary.org/obo/odae/NCIT_import.owl" uri="NCIT_import.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="http://purl.obolibrary.org/obo/odae/OAE_import.owl" uri="OAE_import.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1538252271727" name="http://purl.obolibrary.org/obo/odae/RO_import.owl" uri="RO_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="chttp://purl.obolibrary.org/obo/odae/NDF-RT_import.owl" uri="NDF-RT_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="duplicate:http://purl.obolibrary.org/obo/odae.owl" uri="odae.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="duplicate:http://purl.obolibrary.org/obo/odae.owl" uri="odae_merged.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="http://purl.obolibrary.org/obo/odae/DOID_import.owl" uri="DOID_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="http://purl.obolibrary.org/obo/odae/DrON_import.owl" uri="DrON_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="http://purl.obolibrary.org/obo/odae/NCBITaxon_import.owl" uri="NCBITaxon_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="http://purl.obolibrary.org/obo/odae/NCIT_import.owl" uri="NCIT_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="http://purl.obolibrary.org/obo/odae/OAE_import.owl" uri="OAE_import.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1547307756896" name="http://purl.obolibrary.org/obo/odae/RO_import.owl" uri="RO_import.owl"/>
     </group>
 </catalog>

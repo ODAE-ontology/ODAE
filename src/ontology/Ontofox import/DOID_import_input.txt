@@ -5,7 +5,7 @@ http://purl.obolibrary.org/obo/odae/DOID_import.owl
 DOID
 
 [Low level source term URIs]
-http://purl.obolibrary.org/obo/DIOD_9119
+http://purl.obolibrary.org/obo/DOID_9119
 http://purl.obolibrary.org/obo/DOID_0050073
 http://purl.obolibrary.org/obo/DOID_0050127
 http://purl.obolibrary.org/obo/DOID_0050671
