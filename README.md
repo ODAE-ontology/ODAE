@@ -13,10 +13,9 @@ The ODAE is primarily developed in the Oliver He laboratory at the University of
 
 ODAE has been deposited on Ontobee and BioPortal:
 
-Ontobee: http://www.ontobee.org/ontology/ODAE
-BioPortal: 
+Ontobee: http://www.ontobee.org/ontology/ODAE (See ODAE ontology statistics: http://www.ontobee.org/ontostat/ODAE)
 
-See the ODAE ontology statistics: http://www.ontobee.org/ontostat/ODAE 
+BioPortal: http://bioportal.bioontology.org/ontologies/ODAE 
 
 ## Citation
 
